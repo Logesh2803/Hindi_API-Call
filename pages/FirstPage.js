@@ -22,7 +22,7 @@ export default function App() {
               paramKey: userName,
             })}>
 
-            <Text style={styles.itemName}   > Hindi </Text>
+            <Text style={styles.itemName}> Hindi </Text>
 
         </View>
         
