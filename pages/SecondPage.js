@@ -6,7 +6,7 @@ export default class Hindi extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Second Page</Text>
+        <Text>Second Paged</Text>
       </View>
     )
   }
