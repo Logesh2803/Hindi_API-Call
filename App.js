@@ -1,53 +1,77 @@
 // React Native Pass Value From One Screen to Another Using React Navigation
 // https://aboutreact.com/react-native-pass-value-from-one-screen-to-another-using-react-navigation/
 
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 
-import React from 'react';
+// import React from 'react';
 
+// import {NavigationContainer} from '@react-navigation/native';
+// import {createStackNavigator} from '@react-navigation/stack';
+
+// import FirstPage from './pages/FirstPage';
+// import SecondPage from './pages/SecondPage';
+
+// const Stack = createStackNavigator();
+
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="FirstPage">
+//         <Stack.Screen
+//           name="FirstPage"
+//           component={FirstPage}
+//           options={{
+//             title: 'First Page', //Set Header Title
+//             headerStyle: {
+//               backgroundColor: '#f4511e', //Set Header color
+//             },
+//             headerTintColor: '#fff', //Set Header text color
+//             headerTitleStyle: {
+//               fontWeight: 'bold', //Set Header text style
+//             },
+//           }}
+//         />
+//         <Stack.Screen
+//           name="SecondPage"
+//           component={SecondPage}
+//           options={{
+//             title: 'Second Page', //Set Header Title
+//             headerStyle: {
+//               backgroundColor: '#f4511e', //Set Header color
+//             },
+//             headerTintColor: '#fff', //Set Header text color
+//             headerTitleStyle: {
+//               fontWeight: 'bold', //Set Header text style
+//             },
+//           }}
+//         />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import FirstPage from './pages/FirstPage';
-import SecondPage from './pages/SecondPage';
-
-const Stack = createStackNavigator();
-
+ import SecondPage from './pages/SecondPage';
+ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="FirstPage">
-        <Stack.Screen
-          name="FirstPage"
-          component={FirstPage}
-          options={{
-            title: 'First Page', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-        <Stack.Screen
-          name="SecondPage"
-          component={SecondPage}
-          options={{
-            title: 'Second Page', //Set Header Title
-            headerStyle: {
-              backgroundColor: '#f4511e', //Set Header color
-            },
-            headerTintColor: '#fff', //Set Header text color
-            headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
-            },
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+       <Stack.Navigator>
 
-export default App;
+      <Stack.Screen options={{headerShown: false}} name="First" component={FirstPage} />
+      <Stack.Screen options={{headerShown: false}} name="Second" component={SecondPage} />
+
+      </Stack.Navigator>
+  </NavigationContainer>
+  )
+}
+
+export default App
+
+const styles = StyleSheet.create({})
