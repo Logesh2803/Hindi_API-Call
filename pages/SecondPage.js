@@ -31,6 +31,7 @@ const SecondPage = () => {
 
               </DataTable.Header>
               {data.map((l, i) => (
+                <React.Fragment key = {i}>
                 <ScrollView>
                   <DataTable.Row style={styles.databeBox} key={i}>
 
@@ -41,6 +42,7 @@ const SecondPage = () => {
                     <DataTable.Cell>{l.Tamil}</DataTable.Cell>
                   </DataTable.Row>
                 </ScrollView>
+                </React.Fragment>
               ))}
 
             </DataTable>
